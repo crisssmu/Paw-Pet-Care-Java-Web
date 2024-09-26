@@ -1,5 +1,7 @@
-persistencia\Customer.class
-presentacion\CustomerControl.class
-persistencia\CustomerRepository.class
-accesoDatos\DataBase.class
-servicio\CustomerService.class
+presentation\CustomerControl.class
+service\CustomerService.class
+persistence\CustomerRepository.class
+exceptions\ClassException.class
+exceptions\NumberException.class
+persistence\Customer.class
+dataAccess\DataBase.class
