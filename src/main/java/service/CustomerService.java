@@ -37,5 +37,9 @@ public class CustomerService {
         }  
     }
     
+    public Customer searchCustomer(Long document){
+        return cr.searchCustomerById(document);
+    }
+    
   
 }

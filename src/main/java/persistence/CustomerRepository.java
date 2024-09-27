@@ -40,6 +40,7 @@ public class CustomerRepository {
                 stmt.setLong(5, customer.getNumber());
                 stmt.setString(6, customer.getEmail());
                 stmt.setString(7, customer.getAddres());
+                
                 stmt.executeUpdate();
                 stmt.close();
                 conn.close();
@@ -51,6 +52,8 @@ public class CustomerRepository {
         }
     }
     
+    
+    
     public List<Customer> getAllCustomers() {
     List<Customer> customers = new ArrayList<>();
     try (Connection conn = database.connection()) {
@@ -59,6 +62,7 @@ public class CustomerRepository {
         ResultSet rs = ps.executeQuery();
         
         while (rs.next()) {
+            
             Customer customer = new Customer(
                 rs.getLong("document"),
                 rs.getString("name"),
@@ -68,6 +72,7 @@ public class CustomerRepository {
                 rs.getString("email"),
                 rs.getString("address")
             );
+            
             customers.add(customer);
         }
         ps.close();

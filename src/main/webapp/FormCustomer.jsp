@@ -12,7 +12,7 @@
         <title>Registar Cliente</title>
     </head>
     <body>
-        <style>
+       <style>
             body{
                 background-color: #e5e5f7;
                 background-image: radial-gradient(#c657d8 0.5px, transparent 0.5px), radial-gradient(#c657d8 0.5px, #e5e5f7 0.5px);
@@ -107,8 +107,30 @@
                 border-bottom: 1px solid var(--color);
                 font-family: 'Roboto',sans-serif;
             }
-
-            </style>
+            
+            .mensaje {
+                background-color: #90e0ef;
+                color: #023e8a;
+                padding: 10px;
+                border-radius: 5px;
+                margin-top: 10px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+            a {
+                display: block;
+                margin: -5px auto;
+                text-align: center;
+                text-decoration: none;
+                color: #007bff;
+                font-family: 'Roboto', sans-serif;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            
+        </style>
        
         <form class="form" action="CustomerControl" method="POST">
         <h2 class ="form_title"> Registrar Cliente</h2>
@@ -166,10 +188,13 @@
             }
         %>
             <input type="submit" class="form_submit" value="Registrar">
-        </div>
-        <a href="./ShowCustomer.jsp" target="_self">Mostrar Cliente</a>
+            </form>
+            <a href="./ShowCustomer.jsp" target="_self">Mostrar Cliente</a>
         <a href="./DeleteCustomer.jsp" target="_Self">Eliminar Cliente</a>
-        </form>
+        </div>
+        
+        
+        
         
         
     </body>

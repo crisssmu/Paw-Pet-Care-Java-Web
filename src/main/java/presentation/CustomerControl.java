@@ -14,21 +14,19 @@ import java.util.List;
 import persistence.Customer;
 import service.CustomerService;
 
-
 /**
  *
  * @author Crism
  */
-
 public class CustomerControl extends HttpServlet {
+
     CustomerService cs = new CustomerService();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,7 +45,8 @@ public class CustomerControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String cual = request.getParameter("contCustomer");
-        if(cual.equals("registrar")){
+
+        if (cual.equals("registrar")) {
             Long document = Long.parseLong(request.getParameter("document"));
             String name = request.getParameter("name");
             String lastName = request.getParameter("lastName");
@@ -55,38 +54,43 @@ public class CustomerControl extends HttpServlet {
             Long number = Long.parseLong(request.getParameter("number"));
             String email = request.getParameter("email");
             String address = request.getParameter("address");
-            
-            Customer customer = new Customer(document, name, lastName, gener, number, email, address);
-            cs.registerCustomer(customer);
-            
-            request.setAttribute("mensaje","Cliente registrado existosamente");
-            request.getRequestDispatcher("/FormCustomer.jsp").forward(request, response);
-        } else if(cual.equals("mostrar")){
-            List<Customer> allCustomers = cs.getAllCustomers();
-            String lis=" ";
-            for (Customer allCustomer : allCustomers) {
-                lis+="ID: "+allCustomer.getDocument()+" Nombre: "+allCustomer.getName()+"<br>";
+            if (cs.searchCustomer(document) != null) {
+                request.setAttribute("mensaje", "El documento existe");
+            } else {
+                Customer customer = new Customer(document, name, lastName, gener, number, email, address);
+                cs.registerCustomer(customer);
+                request.setAttribute("mensaje", "Cliente registrado existosamente");
             }
-            
-            request.setAttribute("mensaje", "Estos son: <br>"+lis);
+
+            request.getRequestDispatcher("/FormCustomer.jsp").forward(request, response);
+        } else if (cual.equals("mostrar")) {
+            List<Customer> allCustomers = cs.getAllCustomers();
+            String lis = " ";
+            int cont=1;
+            for (Customer allCustomer : allCustomers) {
+                lis += "["+cont+"]" +" ID: " + allCustomer.getDocument() + " Nombre: " + allCustomer.getName() + " Apellido: " +allCustomer.getLastName()+ " Genero: " + allCustomer.getGener() +" Numero: "+ allCustomer.getNumber() + " Email: " + allCustomer.getEmail() + " Direccion: " + allCustomer.getAddres() + "<br>";
+                cont++;
+            }
+
+            request.setAttribute("mensaje", "Estos son: <br>" + lis);
             request.getRequestDispatcher("/ShowCustomer.jsp").forward(request, response);
-        } else if(cual.equals("eliminar")){
+        } else if (cual.equals("eliminar")) {
             Long document = Long.parseLong(request.getParameter("document"));
-            
+
             boolean success;
             success = cs.deleteCustomer(document);
-        
-        // Mensaje para la vista
-        if (success) {
-            request.setAttribute("mensaje", "Cliente eliminado exitosamente");
-        } else {
-            request.setAttribute("mensaje", "No se encontró el cliente");
-        }
+
+            // Mensaje para la vista
+            if (success) {
+                request.setAttribute("mensaje", "Cliente eliminado exitosamente");
+            } else {
+                request.setAttribute("mensaje", "No se encontró el cliente");
+            }
             cs.deleteCustomer(document);
             request.setAttribute("mensaje", "Cliente eliminado exitosamente");
             request.getRequestDispatcher("/DeleteCustomer.jsp").forward(request, response);
-        }
-           
+        } 
+
     }
 
     /**
