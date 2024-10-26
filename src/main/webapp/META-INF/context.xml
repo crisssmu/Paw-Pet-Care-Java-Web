@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/pawpetcare"/>
+<Context path="/pawpetcare">
+  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="pawpetcare" password="2911" type="javax.sql.DataSource" url="jdbc:postgresql://localhost:5432/pawpetcare" username="postgres"/>
+  <ResourceLink global="pawpetcare" name="pawpetcar" type="javax.sql.DataSource"/>
+</Context>

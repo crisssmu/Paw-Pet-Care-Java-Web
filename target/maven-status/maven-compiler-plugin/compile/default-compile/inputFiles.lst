@@ -1,7 +1,12 @@
+C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\entities\Customer.java
 C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\persistence\CustomerRepository.java
 C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\presentation\CustomerControl.java
 C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\exceptions\NumberException.java
-C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\persistence\Customer.java
+C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\persistence\PetRepository.java
+C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\service\PetService.java
 C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\dataAccess\DataBase.java
+C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\entities\Pet.java
+C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\entities\Specie.java
 C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\exceptions\ClassException.java
+C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\presentation\PetControl.java
 C:\Users\Crism\Documents\NetBeansProjects\pawpetcare\src\main\java\service\CustomerService.java

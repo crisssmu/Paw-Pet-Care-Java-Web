@@ -118,16 +118,19 @@
                 font-size: 0.9rem;
                 text-align: center;
             }
-            a {
+            a{
                 display: block;
-                margin: -5px auto;
-                text-align: center;
+                margin: 10px 0;
+                padding: 10px 20px;
+                color: #fff;
+                background-color: #3866f2;
+                border-radius: 5px;
                 text-decoration: none;
-                color: #007bff;
-                font-family: 'Roboto', sans-serif;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
             }
             a:hover {
-                text-decoration: underline;
+                background-color: #023e8a;
             }
             
         </style>
@@ -151,19 +154,19 @@
             
             <div class="form_group">
                 <label for="lastName" class ="form_label">Apellido</label>
-                <input type="text" id="lastName" name="lastName" class="form_input" placeholder=" ">
+                <input type="text" id="lastName" name="lastName" class="form_input" placeholder=" " required>
                 <span class="form_line"></span>
             </div>
             
             <div class="form_group">
-                <label for="number" class ="form_label">Numero</label>
-                <input type="number" id="number"  name="number" class="form_input" placeholder=" ">
+                <label for="cellPhone" class ="form_label">Numero</label>
+                <input type="number" id="cellPhone"  name="cellPhone" class="form_input" placeholder=" " required>
                 <span class="form_line"></span>
             </div>
             
             <div class="form_group">
                 <label for="gener" class ="form_label">Genero</label>
-                <select name ="gener" id="gener" class="form_select">
+                <select name ="gender" id="gender" class="form_select">
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
                 </select>
@@ -188,10 +191,19 @@
             }
         %>
             <input type="submit" class="form_submit" value="Registrar">
-            </form>
+            
+            <div class ="a"> <a href="./FormPet.jsp" target="_Self">Registrar Mascotas</a>
             <a href="./ShowCustomer.jsp" target="_self">Mostrar Cliente</a>
-        <a href="./DeleteCustomer.jsp" target="_Self">Eliminar Cliente</a>
+            <a href="./CustomerSearch.jsp" target="_self">Buscar cliente</a>
+            <a href="./DeleteCustomer.jsp" target="_Self">Eliminar Cliente</a>
+            
+            <a href="./Inicio.jsp" target="_self">Atras</a></div>
+            </form>
+            
         </div>
+            
+           
+            
         
         
         

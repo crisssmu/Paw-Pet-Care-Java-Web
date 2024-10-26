@@ -17,6 +17,7 @@
                 color: #333;
                 margin: 0;
                 padding: 20px;
+                font-size: 1.1em;
             }
             h1 {
                 color: #ff4c4c;
@@ -49,6 +50,7 @@
                 font-size: 16px;
                 cursor: pointer;
                 transition: background-color 0.3s;
+                font-size: 1.1em;
             }
             input[type="submit"]:hover {
                 background-color: #e04343;
@@ -61,15 +63,20 @@
                 text-align: center;
                 margin-bottom: 15px;
             }
-            a {
+           a{
                 display: block;
-                margin: 10px auto;
-                text-align: center;
+                margin: 10px 0;
+                padding: 10px 20px;
+                color: #fff;
+                background-color: #3866f2;
+                border-radius: 5px;
                 text-decoration: none;
-                color: #007bff;
+                font-size: 1.1em;
+                transition: background-color 0.3s ease;
+                text-align: center;
             }
             a:hover {
-                text-decoration: underline;
+                background-color: #023e8a;
             }
         </style>
     </head>
@@ -92,9 +99,14 @@
             %>
 
             <input type="submit" class="form_submit" value="Eliminar">
-        </form>
-        <a href="./FormCustomer.jsp" target="_self">Registrar Cliente</a>
+            <div class="a">
+                <a href="./FormCustomer.jsp" target="_self">Registrar Cliente</a>
         <a href="./ShowCustomer.jsp" target="_self">Mostrar Cliente</a>
+        <a href="./CustomerSearch.jsp" target="_self">Buscar cliente</a>
+        <a href="./Inicio.jsp" target="_self">Atras</a>
+            </div>
+        </form>
+        
         
     </body>
 </html>

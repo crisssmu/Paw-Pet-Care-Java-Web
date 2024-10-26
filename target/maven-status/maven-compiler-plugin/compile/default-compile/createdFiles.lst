@@ -1,7 +1,12 @@
+entities\Customer.class
 presentation\CustomerControl.class
-service\CustomerService.class
 persistence\CustomerRepository.class
 exceptions\ClassException.class
 exceptions\NumberException.class
-persistence\Customer.class
+entities\Pet.class
 dataAccess\DataBase.class
+entities\Specie.class
+service\CustomerService.class
+persistence\PetRepository.class
+service\PetService.class
+presentation\PetControl.class

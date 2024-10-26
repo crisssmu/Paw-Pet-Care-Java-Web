@@ -5,7 +5,8 @@
 package service;
 
 import java.util.List;
-import persistence.Customer;
+
+import entities.Customer;
 import persistence.CustomerRepository;
 
 /**
@@ -14,31 +15,25 @@ import persistence.CustomerRepository;
  */
 public class CustomerService {
     CustomerRepository cr = new CustomerRepository();
-    public void registerCustomer(Customer customer){
-        if(customer != null && customer.getName() != null){
-            cr.registerCustomer(customer);
-        } else {
-            throw new IllegalArgumentException("Customer data is invalid");
-        }   
+
+    public void registerCustomer(Customer customer) {
+        cr.registerCustomer(customer);
     }
-    
     public List<Customer> getAllCustomers(){
         return cr.getAllCustomers();
     }
-    
-    public boolean deleteCustomer(Long document){
-        return cr.deleteCustomer(document);
+    public boolean deleteCustomer(Customer customer){
+        return cr.deleteCustomer(customer);
     }
     public void updateCustomer(Customer customer){
-        if(customer != null && customer.getName() != null){
-            cr.updateCustomer(customer);
-        } else {
-            throw new IllegalArgumentException("Customer data is invalid");
-        }  
+        cr.updateCustomer(customer);
+    }
+    public Customer searchCustomerByDocument(Long document){
+        return cr.searchCustomerByDocument(document);
     }
     
-    public Customer searchCustomer(Long document){
-        return cr.searchCustomerById(document);
+    public void loadPets(Customer customer){
+        cr.loadPets(customer);
     }
     
   
